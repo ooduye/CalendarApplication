@@ -68,6 +68,7 @@ function return_value(dt,month,year){
     var eventholder = "";
     eventvalue = prompt("Type in an event for: " + dt + "/" + month + "/" + year);
     if (eventvalue === ""){
+        alert("No event was added");
         return -1
     }
     //document.getElementById('t1').value=month + '/' + dt + '/' + year   ;
