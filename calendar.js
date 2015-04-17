@@ -60,7 +60,7 @@ function cal(chm,chy,month,year) {
 }
 
 function return_value(dt,month,year){
-    var eventvalue = ""
+    var eventvalue = "";
     var eventholder = "";
     eventvalue = prompt("Type in an event for: " + dt + "/" + month + "/" + year);
     if (eventvalue === ""){
