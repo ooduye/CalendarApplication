@@ -1,5 +1,17 @@
 var eventList = [];
 
+function start_cal() {
+    var dt_object=new Date();
+    var month=dt_object.getMonth();
+    var year=dt_object.getFullYear();
+    show_cal(0,0,month,year);
+}
+
+function show_cal(chm, chy,month,year) {
+    document.getElementById('section').innerHTML = cal(chm,chy,month,year);
+    document.getElementById('section').style.display = 'inline';
+}
+
 function show_month(month){
     var month_name = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
     return month_name[month];
@@ -47,22 +59,6 @@ function cal(chm,chy,month,year) {
     return str; 
 }
 
-function show_cal(chm, chy,month,year) {
-    document.getElementById('section').innerHTML = cal(chm,chy,month,year);
-    document.getElementById('section').style.display = 'inline';
-}
-
-//  function close_cal() {
-//    document.getElementById('sub').style.display = 'none';
-//  }
-
-function start_cal() {
-    var dt_object=new Date();
-    var month=dt_object.getMonth();
-    var year=dt_object.getFullYear();
-    show_cal(0,0,month,year);
-}
-
 function return_value(dt,month,year){
     var eventvalue = ""
     var eventholder = "";
@@ -71,11 +67,7 @@ function return_value(dt,month,year){
         alert("No event was added");
         return -1
     }
-    //document.getElementById('t1').value=month + '/' + dt + '/' + year   ;
-    //close_cal();
     eventholder = dt + "/" + month + "/" + year + " - " + eventvalue;
-    // document.getElementById('resulttag').innerHTML = eventholder;
-    // console.log(eventholder);
     doArray(eventholder);
 }
 
